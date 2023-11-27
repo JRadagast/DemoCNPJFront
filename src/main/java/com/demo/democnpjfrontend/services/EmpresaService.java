@@ -28,12 +28,14 @@ import org.apache.http.util.EntityUtils;
 @ApplicationScoped
 public class EmpresaService {
     
+    private String baseurl = "http://democnpj:8081/democnpj/empresa";
+    
     public Empresa doRequest( String cnpj ) {
         StringBuilder response = new StringBuilder();
         
         try {
             HttpClient httpClient = HttpClients.createDefault();
-            HttpGet httpGet = new HttpGet("http://localhost:8081/democnpj/empresa/busca-cnpj?cnpj="+cnpj);
+            HttpGet httpGet = new HttpGet( baseurl+"/busca-cnpj?cnpj="+cnpj);
 
             HttpResponse httpResponse = httpClient.execute(httpGet);
 
@@ -94,7 +96,7 @@ public class EmpresaService {
     public String salvar( Empresa empresa ){
         // Create HttpClient, Define a URL e cria a request POST
         HttpClient httpClient = HttpClients.createDefault();
-        String url = "http://localhost:8081/democnpj/empresa/salvar";
+        String url = baseurl + "/salvar";
         HttpPost httpPost = new HttpPost(url);
 
         try {
