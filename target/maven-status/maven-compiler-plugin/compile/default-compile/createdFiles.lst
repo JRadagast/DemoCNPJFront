@@ -1,0 +1,4 @@
+com\demo\democnpjfrontend\JakartaRestConfiguration.class
+com\demo\democnpjfrontend\services\EmpresaService.class
+com\demo\democnpjfrontend\resources\JakartaEE91Resource.class
+com\demo\democnpjfrontend\beans\Empresa.class
